@@ -8,7 +8,7 @@ var Main = React.createClass({
   getInitialState: function(){
     return {
       loggedIn: firebaseUtils.isLoggedIn()
-    }
+    };
   },
   handleChange: function(loggedIn){
     this.setState({
@@ -19,7 +19,15 @@ var Main = React.createClass({
     firebaseUtils.onChange = this.handleChange;
   },
   render: function(){
-    /* Code Here */
+      var loginOrOut;
+      var register;
+      if (this.state.loggedIn) {
+          loginOrOut = <li><Link to="logout" className="navbar-brand">Logout</Link></li>;
+          register = null;
+      } else {
+          loginOrOut = <li><Link to="login" className="navbar-brand">Login</Link></li>;
+          register = <li><Link to="register" className="navbar-brand"> Register </Link></li>;
+      }
     return (
       <span>
         <nav className="navbar navbar-default navbar-static-top">
