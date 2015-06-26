@@ -15,8 +15,8 @@ var routes = (
           <Route name="login" handler={Login} />
           <Route name="logout" handler={Logout} />
           <Route name="register" handler={Register} />
-          // <Route name="schedule" path="/schedule/:team" handler={Schedule} />
-          // <Route name="addGame" handler={AddGame} />
+          <Route name="schedule" path="/schedule/:team" handler={Schedule} />
+          <Route name="addGame" path="/addgame/:team" handler={AddGame} />
           <Route name="home" path="/" handler={Home} />
         </Route>
 );
